@@ -25,23 +25,19 @@ public class SetTest {
 
         // Test: standard constructor
         testHash = new HashSet<>();
-        assertThat(testHash).isNotNull();
         assertThat(testHash).isEmpty();
 
         // Test: HashSet(int initialCapacity)
         testHash = new HashSet<>(initialCapacity);
-        assertThat(testHash).isNotNull();
         assertThat(testHash).isEmpty();
 
         // Test: HashSet(int initialCapacity, float loadFactor)
         testHash = new HashSet<>(initialCapacity, loadFactor);
-        assertThat(testHash).isNotNull();
         assertThat(testHash).isEmpty();
 
         // Test: HashSet(Collection<? extends E> c)
         testInitializing();
         testHash = new HashSet<>(extendHash);
-        assertThat(testHash).isNotNull();
         assertThat(testHash).isNotEmpty();
         testHash.add(3101);
         assertThat(testHash.size()).isEqualTo(5);
@@ -163,6 +159,11 @@ public class SetTest {
         testInitializing();
         extendHash.clear();
         assertThat(extendHash).isEmpty();
+    }
+
+    @Test
+    Object clone(){
+
     }
 
     /**
